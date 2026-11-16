@@ -1,1 +1,46 @@
-import{CONFIG as e}from"./config.js";import{debounce as t}from"./utils.js";export function initSearch(){const n=document.getElementById("archive-search"),c=document.getElementById("archive-count"),i=document.querySelectorAll("[data-exhibit]");if(n&&i.length){const o=i.length,s=t(()=>{const e=n.value.trim().toLowerCase();let t=0;i.forEach(n=>{const c=(n.dataset.search||"")+" "+n.textContent.toLowerCase(),i=""===e||c.includes(e);n.classList.toggle("is-hidden",!i),i&&(t+=1)}),document.querySelectorAll(".timeline__item").forEach(e=>{const t=e.querySelector("[data-exhibit]");t&&e.classList.toggle("is-hidden",t.classList.contains("is-hidden"))}),c&&(c.textContent=""===e?o+" exhibits on display":t+" of "+o+" exhibits match")},e.timings.searchDebounce);n.addEventListener("input",s)}document.addEventListener("keydown",e=>{const t=document.activeElement&&document.activeElement.tagName,c=/^(INPUT|TEXTAREA|SELECT)$/.test(t);if("/"!==e.key||e.metaKey||e.ctrlKey||e.altKey||c||!n||(e.preventDefault(),n.focus(),n.select()),!("t"!==e.key&&"T"!==e.key||e.metaKey||e.ctrlKey||e.altKey||c)){const e=document.getElementById("theme-toggle");e&&e.click()}})}
+import { CONFIG as e } from './config.js';
+import { debounce as t } from './utils.js';
+export function initSearch() {
+    const n = document.getElementById('archive-search'),
+        c = document.getElementById('archive-count'),
+        i = document.querySelectorAll('[data-exhibit]');
+    if (n && i.length) {
+        const o = i.length,
+            s = t(() => {
+                const e = n.value.trim().toLowerCase();
+                let t = 0;
+                (i.forEach((n) => {
+                    const c = (n.dataset.search || '') + ' ' + n.textContent.toLowerCase(),
+                        i = '' === e || c.includes(e);
+                    (n.classList.toggle('is-hidden', !i), i && (t += 1));
+                }),
+                    document.querySelectorAll('.timeline__item').forEach((e) => {
+                        const t = e.querySelector('[data-exhibit]');
+                        t && e.classList.toggle('is-hidden', t.classList.contains('is-hidden'));
+                    }),
+                    c &&
+                        (c.textContent =
+                            '' === e
+                                ? o + ' exhibits on display'
+                                : t + ' of ' + o + ' exhibits match'));
+            }, e.timings.searchDebounce);
+        n.addEventListener('input', s);
+    }
+    document.addEventListener('keydown', (e) => {
+        const t = document.activeElement && document.activeElement.tagName,
+            c = /^(INPUT|TEXTAREA|SELECT)$/.test(t);
+        if (
+            ('/' !== e.key ||
+                e.metaKey ||
+                e.ctrlKey ||
+                e.altKey ||
+                c ||
+                !n ||
+                (e.preventDefault(), n.focus(), n.select()),
+            !(('t' !== e.key && 'T' !== e.key) || e.metaKey || e.ctrlKey || e.altKey || c))
+        ) {
+            const e = document.getElementById('theme-toggle');
+            e && e.click();
+        }
+    });
+}
