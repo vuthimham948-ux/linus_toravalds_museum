@@ -1,1 +1,19 @@
-export function initNav(){const e=document.getElementById("nav-toggle"),t=document.getElementById("primary-nav"),n=document.querySelector(".site-header");if(!e||!t)return;const c=()=>{e.checked=!1};t.addEventListener("click",e=>{e.target.closest("a")&&c()}),document.addEventListener("keydown",e=>{"Escape"===e.key&&c()}),document.addEventListener("click",t=>{e.checked&&n&&!n.contains(t.target)&&c()})}
+export function initNav() {
+    const e = document.getElementById('nav-toggle'),
+        t = document.getElementById('primary-nav'),
+        n = document.querySelector('.site-header');
+    if (!e || !t) return;
+    const c = () => {
+        e.checked = !1;
+    };
+    (t.addEventListener('click', (e) => {
+        e.target.closest('a') && c();
+    }),
+        document.addEventListener('keydown', (e) => {
+            'Escape' === e.key && c();
+        }),
+        document.addEventListener('click', (t) => {
+            e.checked && n && !n.contains(t.target) && c();
+        }));
+}
+
