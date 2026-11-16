@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 360" role="img" aria-labelledby="tuxTitle tuxDesc">
+  <title id="tuxTitle">Tux, the Linux penguin</title>
+  <desc id="tuxDesc">A friendly illustration of Tux, the official mascot of the Linux kernel.</desc>
+
+  <defs>
+    <radialGradient id="tuxGlow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity=".28"/>
+      <stop offset="55%" stop-color="#7ee787" stop-opacity=".10"/>
+      <stop offset="100%" stop-color="#7ee787" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tuxBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c333c"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="tuxBeak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffc45c"/>
+      <stop offset="100%" stop-color="#f08800"/>
+    </linearGradient>
+    <linearGradient id="tuxBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d7dee6"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="160" cy="185" r="160" fill="url(#tuxGlow)"/>
+
+  <!-- feet -->
+  <ellipse cx="116" cy="330" rx="44" ry="17" fill="url(#tuxBeak)"/>
+  <ellipse cx="204" cy="330" rx="44" ry="17" fill="url(#tuxBeak)"/>
+  <path d="M80 330h72M168 330h72" stroke="#c76b00" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+
+  <!-- flippers -->
+  <ellipse cx="55" cy="214" rx="23" ry="80" fill="#0b0f14" transform="rotate(11 55 214)"/>
+  <ellipse cx="265" cy="214" rx="23" ry="80" fill="#0b0f14" transform="rotate(-11 265 214)"/>
+
+  <!-- body -->
+  <path d="M160 48c60 0 108 48 108 116v78c0 48-48 78-108 78S52 290 52 242v-78C52 96 100 48 160 48Z" fill="url(#tuxBody)"/>
+  <path d="M160 48c60 0 108 48 108 116v8c-14-40-57-68-108-68S66 132 52 172v-8C52 96 100 48 160 48Z" fill="#ffffff" opacity=".06"/>
+
+  <!-- belly -->
+  <path d="M160 126c45 0 76 41 76 92v36c0 39-34 62-76 62s-76-23-76-62v-36c0-51 31-92 76-92Z" fill="url(#tuxBelly)"/>
+
+  <!-- eyes -->
+  <ellipse cx="127" cy="130" rx="23" ry="27" fill="#ffffff"/>
+  <ellipse cx="193" cy="130" rx="23" ry="27" fill="#ffffff"/>
+  <circle cx="133" cy="137" r="10" fill="#0b0f14"/>
+  <circle cx="199" cy="137" r="10" fill="#0b0f14"/>
+  <circle cx="136.5" cy="133.5" r="3.2" fill="#ffffff" opacity=".95"/>
+  <circle cx="202.5" cy="133.5" r="3.2" fill="#ffffff" opacity=".95"/>
+
+  <!-- beak -->
+  <path d="M160 150c14 0 26 9 26 17s-12 18-26 18-26-10-26-18 12-17 26-17Z" fill="url(#tuxBeak)"/>
+  <path d="M135 167h50" stroke="#b85f00" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+
+  <!-- cheeks -->
+  <ellipse cx="108" cy="170" rx="13" ry="7" fill="#ff9aa2" opacity=".18"/>
+  <ellipse cx="212" cy="170" rx="13" ry="7" fill="#ff9aa2" opacity=".18"/>
+</svg>
